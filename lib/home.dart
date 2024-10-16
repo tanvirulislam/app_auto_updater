@@ -55,13 +55,6 @@ class _HomePageState extends State<HomePage> with UpdaterListener {
           title: const Text('METHODS'),
           children: [
             PreferenceListItem(
-              title: const Text('setFeedURL'),
-              detailText: Text(_feedURL),
-              onTap: () {
-                _handleClickSetFeedURL();
-              },
-            ),
-            PreferenceListItem(
               title: const Text('checkForUpdates'),
               onTap: () {
                 _handleClickCheckForUpdates();
