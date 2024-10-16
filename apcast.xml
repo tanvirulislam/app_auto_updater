@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="1.0.3" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>For unit test only</title>
+    <item>
+      <title>Version 3.0</title>
+        <description>Version 3.0 introduces several performance improvements, new features, and bug fixes to enhance your experience. Update now for a smoother, more efficient workflow.</description>
+        <pubDate>Sat, 26 Jul 2014 15:20:11 +0000</pubDate>
+        <enclosure url="https://drive.google.com/file/d/1Ow7d3uqnUKec4eSJ0dErFMCHZy5YPNIw/view?usp=drive_link" sparkle:version="3.0" />
+        <sparkle:tags> <sparkle:criticalUpdate /> </sparkle:tags> 
+    </item>
+  </channel>
+</rss>
