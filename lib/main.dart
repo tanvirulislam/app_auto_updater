@@ -1,26 +1,9 @@
 import 'package:app_auto_updater/home.dart';
-import 'package:auto_updater/auto_updater.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
-import 'package:window_manager/window_manager.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await windowManager.ensureInitialized();
-
-  WidgetsFlutterBinding.ensureInitialized();
-
-  // String feedURL =
-  //     'https://raw.githubusercontent.com/tanvirulislam/app_auto_updater/refs/heads/main/apcast.xml';
-  // await autoUpdater.setFeedURL(feedURL);
-  // await autoUpdater.checkForUpdates();
-
-  windowManager.waitUntilReadyToShow(null, () async {
-    // await windowManager.setPreventClose(true);
-    await windowManager.show();
-    await windowManager.focus();
-  });
-
   runApp(const MyApp());
 }
 
