@@ -1,5 +1,4 @@
 import 'package:app_auto_updater/home.dart';
-import 'package:auto_updater/auto_updater.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:window_manager/window_manager.dart';
