@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> with UpdaterListener {
   final String _feedURL =
-      'https://raw.githubusercontent.com/larryaasen/upgrader/master/test/testappcast.xml';
+      'https://raw.githubusercontent.com/tanvirulislam/app_auto_updater/refs/heads/main/apcast.xml';
 
   bool _isFeedURLSetted = false;
 
@@ -36,10 +36,7 @@ class _HomePageState extends State<HomePage> with UpdaterListener {
   }
 
   Future<void> _handleClickCheckForUpdates() async {
-    if (!_isFeedURLSetted) {
-      BotToast.showText(text: 'Please call setFeedURL method first.');
-      return;
-    }
+    await autoUpdater.setFeedURL(_feedURL);
     await autoUpdater.checkForUpdates();
   }
 
