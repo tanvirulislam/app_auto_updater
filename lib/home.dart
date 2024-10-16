@@ -18,17 +18,18 @@ class _HomePageState extends State<HomePage> with UpdaterListener {
 
   bool isFeedURLSetted = false;
   String? appVersion;
-
-  Future<void> getAppVersion() async {
-    PackageInfo packageInfo = await PackageInfo.fromPlatform();
-    appVersion = packageInfo.version;
-  }
-
   @override
   void initState() {
     autoUpdater.addListener(this);
     getAppVersion();
     super.initState();
+  }
+
+  Future<void> getAppVersion() async {
+    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    setState(() {
+      appVersion = packageInfo.version;
+    });
   }
 
   @override
@@ -37,7 +38,7 @@ class _HomePageState extends State<HomePage> with UpdaterListener {
     super.dispose();
   }
 
-  Future<void> _handleClickSetFeedURL() async {
+  Future<void> handleClickSetFeedURL() async {
     await autoUpdater.setFeedURL(_feedURL);
     isFeedURLSetted = true;
   }
@@ -47,11 +48,11 @@ class _HomePageState extends State<HomePage> with UpdaterListener {
     await autoUpdater.checkForUpdates();
   }
 
-  Future<void> _handleClickCheckForUpdatesWithoutUI() async {
+  Future<void> handleClickCheckForUpdatesWithoutUI() async {
     await autoUpdater.checkForUpdates(inBackground: true);
   }
 
-  Future<void> _handleClickSetScheduledCheckInterval() async {
+  Future<void> handleClickSetScheduledCheckInterval() async {
     await autoUpdater.setScheduledCheckInterval(3600);
   }
 
@@ -59,13 +60,12 @@ class _HomePageState extends State<HomePage> with UpdaterListener {
     return PreferenceList(
       children: <Widget>[
         PreferenceListSection(
-          title: const Text('METHODS'),
           children: [
-            PreferenceListItem(
-              title: const Text('setFeedURL'),
-              detailText: Text(_feedURL),
-              onTap: () => _handleClickSetFeedURL(),
-            ),
+            // PreferenceListItem(
+            //   title: const Text('setFeedURL'),
+            //   detailText: Text(_feedURL),
+            //   onTap: () => handleClickSetFeedURL(),
+            // ),
             PreferenceListItem(
               title: const Text('checkForUpdates'),
               onTap: () => _handleClickCheckForUpdates(),
@@ -80,7 +80,7 @@ class _HomePageState extends State<HomePage> with UpdaterListener {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(appVersion ?? 'appVersion'),
+        title: Text("Version ${appVersion ?? ''}"),
       ),
       body: _buildBody(context),
     );
