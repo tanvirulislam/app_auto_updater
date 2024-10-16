@@ -14,6 +14,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> with UpdaterListener {
   final String _feedURL =
+      // "https://printerdemo.s3.ap-south-1.amazonaws.com/apcast.xml";
       'https://raw.githubusercontent.com/tanvirulislam/app_auto_updater/refs/heads/main/apcast.xml';
 
   bool isFeedURLSetted = false;
@@ -61,11 +62,6 @@ class _HomePageState extends State<HomePage> with UpdaterListener {
       children: <Widget>[
         PreferenceListSection(
           children: [
-            // PreferenceListItem(
-            //   title: const Text('setFeedURL'),
-            //   detailText: Text(_feedURL),
-            //   onTap: () => handleClickSetFeedURL(),
-            // ),
             PreferenceListItem(
               title: const Text('checkForUpdates'),
               onTap: () => _handleClickCheckForUpdates(),
