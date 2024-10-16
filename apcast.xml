@@ -4,10 +4,12 @@
     <title>For unit test only</title>
     <item>
       <title>Version 1.0.6</title>
-        <description>Version 1.0.6 introduces several performance improvements, new features, and bug fixes to enhance your experience. Update now for a smoother, more efficient workflow.</description>
-        <pubDate>Sat, 26 Jul 2014 15:20:11 +0000</pubDate>
-        <enclosure url="https://raw.githubusercontent.com/tanvirulislam/app_auto_updater/main/auto_updater.exe" sparkle:version="1.0.6" />
-        <sparkle:tags> <sparkle:criticalUpdate /> </sparkle:tags> 
+      <description>Version 1.0.6 introduces several performance improvements, new features, and bug fixes to enhance your experience. Update now for a smoother, more efficient workflow.</description>
+      <pubDate>Sat, 26 Jul 2014 15:20:11 +0000</pubDate>
+      <enclosure url="https://printerdemo.s3.ap-south-1.amazonaws.com/auto_updater.exe" sparkle:version="1.0.6" />
+      <sparkle:tags>
+        <sparkle:criticalUpdate />
+      </sparkle:tags>
     </item>
   </channel>
 </rss>

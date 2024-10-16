@@ -61,11 +61,11 @@ class _HomePageState extends State<HomePage> with UpdaterListener {
       children: <Widget>[
         PreferenceListSection(
           children: [
-            // PreferenceListItem(
-            //   title: const Text('setFeedURL'),
-            //   detailText: Text(_feedURL),
-            //   onTap: () => handleClickSetFeedURL(),
-            // ),
+            PreferenceListItem(
+              title: const Text('setFeedURL'),
+              detailText: Text(_feedURL),
+              onTap: () => handleClickSetFeedURL(),
+            ),
             PreferenceListItem(
               title: const Text('checkForUpdates'),
               onTap: () => _handleClickCheckForUpdates(),
