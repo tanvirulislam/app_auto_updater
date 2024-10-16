@@ -57,15 +57,11 @@ class _HomePageState extends State<HomePage> with UpdaterListener {
             PreferenceListItem(
               title: const Text('setFeedURL'),
               detailText: Text(_feedURL),
-              onTap: () {
-                _handleClickSetFeedURL();
-              },
+              onTap: () => _handleClickSetFeedURL(),
             ),
             PreferenceListItem(
               title: const Text('checkForUpdates'),
-              onTap: () {
-                _handleClickCheckForUpdates();
-              },
+              onTap: () => _handleClickCheckForUpdates(),
             ),
           ],
         ),
