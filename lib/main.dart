@@ -10,11 +10,10 @@ void main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
 
-  String feedURL =
-      'https://raw.githubusercontent.com/tanvirulislam/app_auto_updater/refs/heads/main/apcast.xml';
-  await autoUpdater.setFeedURL(feedURL);
-  await autoUpdater.checkForUpdates();
-  await autoUpdater.setScheduledCheckInterval(3600);
+  // String feedURL = 'https://raw.githubusercontent.com/larryaasen/upgrader/master/test/testappcast.xml';
+  // await autoUpdater.setFeedURL(feedURL);
+  // await autoUpdater.checkForUpdates();
+  // await autoUpdater.setScheduledCheckInterval(3600);
 
   windowManager.waitUntilReadyToShow(null, () async {
     // await windowManager.setPreventClose(true);

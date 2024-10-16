@@ -55,6 +55,13 @@ class _HomePageState extends State<HomePage> with UpdaterListener {
           title: const Text('METHODS'),
           children: [
             PreferenceListItem(
+              title: const Text('setFeedURL'),
+              detailText: Text(_feedURL),
+              onTap: () {
+                _handleClickSetFeedURL();
+              },
+            ),
+            PreferenceListItem(
               title: const Text('checkForUpdates'),
               onTap: () {
                 _handleClickCheckForUpdates();
@@ -70,7 +77,7 @@ class _HomePageState extends State<HomePage> with UpdaterListener {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("0.0.11"),
+        title: const Text("Test app"),
       ),
       body: _buildBody(context),
     );
