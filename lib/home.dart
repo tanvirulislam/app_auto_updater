@@ -1,7 +1,7 @@
 import 'package:auto_updater/auto_updater.dart';
-import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:preference_list/preference_list.dart';
 import 'package:window_manager/window_manager.dart';
 
@@ -16,11 +16,18 @@ class _HomePageState extends State<HomePage> with UpdaterListener {
   final String _feedURL =
       'https://raw.githubusercontent.com/tanvirulislam/app_auto_updater/refs/heads/main/apcast.xml';
 
-  bool _isFeedURLSetted = false;
+  bool isFeedURLSetted = false;
+  String? appVersion;
+
+  Future<void> getAppVersion() async {
+    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    appVersion = packageInfo.version;
+  }
 
   @override
   void initState() {
     autoUpdater.addListener(this);
+    getAppVersion();
     super.initState();
   }
 
@@ -32,7 +39,7 @@ class _HomePageState extends State<HomePage> with UpdaterListener {
 
   Future<void> _handleClickSetFeedURL() async {
     await autoUpdater.setFeedURL(_feedURL);
-    _isFeedURLSetted = true;
+    isFeedURLSetted = true;
   }
 
   Future<void> _handleClickCheckForUpdates() async {
@@ -73,7 +80,7 @@ class _HomePageState extends State<HomePage> with UpdaterListener {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Test app"),
+        title: Text(appVersion ?? 'appVersion'),
       ),
       body: _buildBody(context),
     );
