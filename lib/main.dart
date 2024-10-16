@@ -1,4 +1,5 @@
 import 'package:app_auto_updater/home.dart';
+import 'package:auto_updater/auto_updater.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:window_manager/window_manager.dart';
@@ -9,10 +10,10 @@ void main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
 
-  // String feedURL = 'https://raw.githubusercontent.com/larryaasen/upgrader/master/test/testappcast.xml';
+  // String feedURL =
+  //     'https://raw.githubusercontent.com/tanvirulislam/app_auto_updater/refs/heads/main/apcast.xml';
   // await autoUpdater.setFeedURL(feedURL);
   // await autoUpdater.checkForUpdates();
-  // await autoUpdater.setScheduledCheckInterval(3600);
 
   windowManager.waitUntilReadyToShow(null, () async {
     // await windowManager.setPreventClose(true);
